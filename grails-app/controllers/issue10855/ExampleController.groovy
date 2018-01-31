@@ -41,4 +41,12 @@ class ExampleController {
     def post6() {
         render "$params - post6"
     }
+
+    def get7() {
+        render 'get7'
+    }
+
+    def post7() {
+        render 'post7'
+    }
 }

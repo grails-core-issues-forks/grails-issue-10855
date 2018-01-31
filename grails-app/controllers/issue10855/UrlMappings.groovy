@@ -15,11 +15,12 @@ class UrlMappings {
         "/three"(controller: 'example', action: 'get3', method: 'GET')
         "/three"(controller: 'example', action: 'post3', method: 'POST')
 
+        // Define "method" as an arbitraty variable doesn't work
         "/four"(controller: 'example', action: 'get4') {
             method = 'GET'
         }
         "/four"(controller: 'example', action: 'post4') {
-            method = 'POST' // <-- Method doesn't work
+            method = 'POST'
         }
 
         // Both cases work
@@ -32,6 +33,18 @@ class UrlMappings {
         }
         post "/six"(controller: 'example', action: 'post6') {
             arbitrary = 'data6 - post'
+        }
+
+        // Define "method" as an arbitraty variable doesn't work
+        "/seven" {
+            controller = 'example'
+            action = 'get7'
+            method = 'GET'
+        }
+        "/seven" {
+            controller = 'example'
+            action = 'post7'
+            method = 'POST'
         }
     }
 }
